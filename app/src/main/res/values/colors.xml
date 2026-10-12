@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Main colors -->
+    <color name="primary">#1E3A5F</color>
+    <color name="primary_dark">#17304F</color>
+    <color name="primary_variant">#274C77</color>
+
+    <!-- Accent colors -->
+    <color name="accent">#2ECC71</color>
+    <color name="accent_soft">#DCF8E8</color>
+    <color name="accent_text">#137A3D</color>
+
+    <!-- Backgrounds -->
+    <color name="app_background">#F5F7FA</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="chip_active_background">#E9F0F7</color>
+    <color name="empty_state_background">#8CFFFFFF</color>
+
+    <!-- Text colors -->
+    <color name="text_primary">#17212B</color>
+    <color name="text_secondary">#4F5F76</color>
+    <color name="text_muted">#667085</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="hero_subtitle">#E5EEF8</color>
+
+    <!-- Borders -->
+    <color name="border_light">#D7DDE5</color>
+    <color name="border_dashed">#B7C0CC</color>
+
+    <!-- Pain / warning -->
+    <color name="pain">#E57373</color>
+    <color name="pain_soft">#FDEAEA</color>
+    <color name="pain_text">#A94242</color>
+    <color name="danger">#E57373</color>
+
+</resources>

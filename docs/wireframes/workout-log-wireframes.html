@@ -1,0 +1,921 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workout Log - Wireframes Android</title>
+  <style>
+    :root {
+      --primary: #1e3a5f;
+      --primary-2: #274c77;
+      --accent: #2ecc71;
+      --accent-soft: #dcf8e8;
+      --pain: #e57373;
+      --pain-soft: #fdeaea;
+      --ink: #17212b;
+      --muted: #667085;
+      --line: #d7dde5;
+      --surface: #ffffff;
+      --bg: #f5f7fa;
+      --paper: #edf1f5;
+      --shadow: 0 18px 36px rgba(15, 23, 42, .12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+    }
+
+    header {
+      padding: 28px 32px 18px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 30px;
+      line-height: 1.15;
+      letter-spacing: 0;
+      color: var(--primary);
+    }
+
+    .subtitle {
+      max-width: 980px;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .board {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 28px;
+      padding: 28px;
+      align-items: start;
+    }
+
+    .frame-block {
+      display: grid;
+      gap: 12px;
+      justify-items: center;
+    }
+
+    .frame-title {
+      width: min(100%, 360px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .frame-title h2 {
+      font-size: 18px;
+      color: var(--primary);
+    }
+
+    .xml-name {
+      padding: 5px 8px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 11px;
+      font-family: Consolas, "Courier New", monospace;
+      white-space: nowrap;
+    }
+
+    .phone {
+      width: 360px;
+      min-height: 760px;
+      overflow: hidden;
+      border: 8px solid #111827;
+      border-radius: 28px;
+      background: var(--bg);
+      box-shadow: var(--shadow);
+    }
+
+    .screen {
+      min-height: 744px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg);
+    }
+
+    .status {
+      height: 26px;
+      padding: 7px 18px 0;
+      display: flex;
+      justify-content: space-between;
+      color: #ffffff;
+      background: var(--primary);
+      font-size: 11px;
+    }
+
+    .toolbar {
+      min-height: 56px;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #ffffff;
+      background: var(--primary);
+    }
+
+    .toolbar-title {
+      flex: 1;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .icon-btn {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, .25);
+      border-radius: 7px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .content {
+      flex: 1;
+      padding: 16px;
+    }
+
+    .content.scroll {
+      display: grid;
+      align-content: start;
+      gap: 14px;
+      padding-bottom: 88px;
+    }
+
+    .section-title {
+      font-size: 13px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-weight: 700;
+    }
+
+    .hero-summary {
+      padding: 18px;
+      border-radius: 8px;
+      color: #ffffff;
+      background: var(--primary-2);
+    }
+
+    .hero-summary h3 {
+      font-size: 20px;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .hero-summary p {
+      color: rgba(255, 255, 255, .82);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .stat,
+    .card,
+    .list-item,
+    .form-card,
+    .calendar-box {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+
+    .stat {
+      padding: 13px;
+    }
+
+    .stat strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--primary);
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .card {
+      padding: 14px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .card h3 {
+      font-size: 16px;
+      line-height: 1.25;
+    }
+
+    .meta,
+    .helper {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .quick-actions {
+      display: grid;
+      gap: 10px;
+    }
+
+    .button {
+      min-height: 46px;
+      padding: 0 14px;
+      border: 1px solid transparent;
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .button.secondary {
+      border-color: var(--line);
+      color: var(--primary);
+      background: var(--surface);
+    }
+
+    .button.danger {
+      background: var(--pain);
+    }
+
+    .button-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .chip-row {
+      display: flex;
+      gap: 8px;
+      overflow: hidden;
+    }
+
+    .chip {
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .chip.active {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: #e9f0f7;
+      font-weight: 700;
+    }
+
+    .list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .list-item {
+      min-height: 82px;
+      padding: 12px;
+      display: grid;
+      gap: 7px;
+    }
+
+    .list-main {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .list-main strong {
+      font-size: 15px;
+      line-height: 1.2;
+    }
+
+    .list-main span {
+      flex: none;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .tag {
+      width: fit-content;
+      padding: 4px 7px;
+      border-radius: 6px;
+      background: var(--accent-soft);
+      color: #137a3d;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .tag.pain {
+      background: var(--pain-soft);
+      color: #a94242;
+    }
+
+    .empty-box {
+      padding: 28px 18px;
+      border: 1px dashed #b7c0cc;
+      border-radius: 8px;
+      text-align: center;
+      color: var(--muted);
+      background: rgba(255, 255, 255, .55);
+    }
+
+    .fab {
+      width: 58px;
+      height: 58px;
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: var(--accent);
+      color: #ffffff;
+      font-size: 28px;
+      font-weight: 600;
+      box-shadow: 0 10px 22px rgba(20, 120, 60, .32);
+    }
+
+    .form-card {
+      padding: 14px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+    }
+
+    .field label {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .input,
+    .textarea,
+    .select-row {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #ffffff;
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    .input,
+    .select-row {
+      min-height: 44px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .textarea {
+      min-height: 82px;
+      padding: 12px;
+      line-height: 1.35;
+    }
+
+    .switch-row {
+      min-height: 48px;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--surface);
+    }
+
+    .switch {
+      width: 44px;
+      height: 24px;
+      border-radius: 999px;
+      background: var(--accent);
+      position: relative;
+    }
+
+    .switch::after {
+      content: "";
+      width: 18px;
+      height: 18px;
+      position: absolute;
+      top: 3px;
+      right: 3px;
+      border-radius: 50%;
+      background: #ffffff;
+    }
+
+    .detail-hero {
+      padding: 18px;
+      border-radius: 8px;
+      color: #ffffff;
+      background: var(--primary-2);
+    }
+
+    .detail-hero .date {
+      margin-bottom: 7px;
+      color: rgba(255, 255, 255, .75);
+      font-size: 12px;
+    }
+
+    .detail-hero h3 {
+      font-size: 24px;
+      line-height: 1.16;
+    }
+
+    .info-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .info-row {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      background: var(--surface);
+    }
+
+    .info-row span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .info-row strong {
+      text-align: right;
+      font-size: 13px;
+    }
+
+    .calendar-box {
+      padding: 12px;
+    }
+
+    .calendar-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .week,
+    .days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+    }
+
+    .week span {
+      text-align: center;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .day {
+      min-height: 34px;
+      border-radius: 7px;
+      display: grid;
+      place-items: center;
+      color: var(--ink);
+      font-size: 12px;
+      background: #f8fafc;
+    }
+
+    .day.dim {
+      color: #b0b8c4;
+    }
+
+    .day.marked {
+      border: 2px solid var(--accent);
+      background: var(--accent-soft);
+      font-weight: 700;
+    }
+
+    .day.selected {
+      color: #ffffff;
+      background: var(--primary);
+      font-weight: 700;
+    }
+
+    .about-logo {
+      width: 82px;
+      height: 82px;
+      margin: 10px auto 2px;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      color: #ffffff;
+      background: var(--primary);
+      font-size: 28px;
+      font-weight: 800;
+    }
+
+    .about-copy {
+      text-align: center;
+      display: grid;
+      gap: 8px;
+    }
+
+    .flow {
+      margin: 4px 28px 30px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+
+    .flow h2 {
+      margin-bottom: 14px;
+      color: var(--primary);
+      font-size: 18px;
+    }
+
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+    }
+
+    .flow-node {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      background: #fbfcfe;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    @media (max-width: 520px) {
+      header {
+        padding: 22px 18px 16px;
+      }
+
+      .board {
+        grid-template-columns: 1fr;
+        padding: 18px 10px;
+      }
+
+      .phone {
+        width: min(360px, calc(100vw - 22px));
+      }
+
+      .frame-title {
+        width: min(360px, calc(100vw - 22px));
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Workout Log - Wireframes Android</h1>
+    <p class="subtitle">
+      Plantilla visual basada en el guion del proyecto. Cada frame representa un Fragment y usa componentes equivalentes a Views XML: MaterialToolbar, MaterialCardView, TextInputLayout, RecyclerView, CalendarView, Button y FloatingActionButton.
+    </p>
+  </header>
+
+  <main class="board">
+    <section class="frame-block">
+      <div class="frame-title">
+        <h2>Home</h2>
+        <span class="xml-name">fragment_home.xml</span>
+      </div>
+      <div class="phone">
+        <div class="screen">
+          <div class="status"><span>10:45</span><span>LTE 100%</span></div>
+          <div class="toolbar">
+            <div class="toolbar-title">Workout Log</div>
+            <div class="icon-btn">i</div>
+            <div class="icon-btn">⋮</div>
+          </div>
+          <div class="content scroll">
+            <div class="hero-summary">
+              <h3>Diario de entrenamiento</h3>
+              <p>Resumen rápido de tu actividad y accesos principales.</p>
+            </div>
+            <p class="section-title">Resumen</p>
+            <div class="stats-grid">
+              <div class="stat"><strong>18</strong><span>Entrenamientos totales</span></div>
+              <div class="stat"><strong>5</strong><span>Entrenamientos este mes</span></div>
+              <div class="stat"><strong>72.5</strong><span>Ultimo peso registrado</span></div>
+              <div class="stat"><strong>1</strong><span>Molestia reciente</span></div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <h3>Ultimo entrenamiento</h3>
+                  <p class="meta">13/05/2026</p>
+                </div>
+                <span class="tag pain">Molestia</span>
+              </div>
+              <p class="helper">Pecho y triceps · 72.5 kg · Muneca derecha</p>
+            </div>
+            <p class="section-title">Accesos</p>
+            <div class="quick-actions">
+              <div class="button">+ Añadir entrenamiento</div>
+              <div class="button secondary">Historial</div>
+              <div class="button secondary">Calendario</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="frame-block">
+      <div class="frame-title">
+        <h2>Historial</h2>
+        <span class="xml-name">fragment_workout_list.xml</span>
+      </div>
+      <div class="phone">
+        <div class="screen">
+          <div class="status"><span>10:45</span><span>LTE 100%</span></div>
+          <div class="toolbar">
+            <div class="icon-btn">‹</div>
+            <div class="toolbar-title">Historial</div>
+            <div class="icon-btn">⌕</div>
+            <div class="icon-btn">⋮</div>
+          </div>
+          <div class="content scroll">
+            <div class="chip-row">
+              <span class="chip active">Todos</span>
+              <span class="chip">Con molestias</span>
+              <span class="chip">Recientes</span>
+            </div>
+            <div class="list">
+              <div class="list-item">
+                <div class="list-main">
+                  <strong>Pecho y triceps</strong>
+                  <span>13/05/2026</span>
+                </div>
+                <p class="helper">Peso: 72.5 kg</p>
+                <span class="tag pain">Molestia: muneca derecha</span>
+              </div>
+              <div class="list-item">
+                <div class="list-main">
+                  <strong>Espalda y biceps</strong>
+                  <span>11/05/2026</span>
+                </div>
+                <p class="helper">Peso: 72.8 kg</p>
+                <span class="tag">Sin molestias</span>
+              </div>
+              <div class="list-item">
+                <div class="list-main">
+                  <strong>Cardio suave</strong>
+                  <span>09/05/2026</span>
+                </div>
+                <p class="helper">Sin peso registrado</p>
+                <span class="tag">Sin molestias</span>
+              </div>
+              <div class="list-item">
+                <div class="list-main">
+                  <strong>Pierna</strong>
+                  <span>07/05/2026</span>
+                </div>
+                <p class="helper">Peso: 73.0 kg</p>
+                <span class="tag pain">Molestia: rodilla izquierda</span>
+              </div>
+            </div>
+          </div>
+          <div class="fab">+</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="frame-block">
+      <div class="frame-title">
+        <h2>Añadir / Editar</h2>
+        <span class="xml-name">fragment_add_edit_workout.xml</span>
+      </div>
+      <div class="phone">
+        <div class="screen">
+          <div class="status"><span>10:45</span><span>LTE 100%</span></div>
+          <div class="toolbar">
+            <div class="icon-btn">‹</div>
+            <div class="toolbar-title">Añadir entrenamiento</div>
+            <div class="icon-btn">✓</div>
+          </div>
+          <div class="content scroll">
+            <div class="form-card">
+              <div class="field">
+                <label>Fecha</label>
+                <div class="select-row"><span>13/05/2026</span><span>▾</span></div>
+              </div>
+              <div class="field">
+                <label>Entrenamiento realizado</label>
+                <div class="textarea">Pecho y triceps</div>
+                <p class="helper">Campo obligatorio.</p>
+              </div>
+              <div class="field">
+                <label>Peso corporal</label>
+                <div class="input">72.5 kg</div>
+              </div>
+              <div class="switch-row">
+                <div>
+                  <strong>Hubo molestia</strong>
+                  <p class="helper">Mostrar campo de descripcion si esta activo.</p>
+                </div>
+                <div class="switch"></div>
+              </div>
+              <div class="field">
+                <label>Descripcion de molestia</label>
+                <div class="textarea">Molestia leve en muneca derecha al hacer press banca.</div>
+              </div>
+              <div class="field">
+                <label>Notas</label>
+                <div class="textarea">Buen entrenamiento. Bajar un poco el peso la proxima sesion.</div>
+              </div>
+            </div>
+            <div class="button">Guardar entrenamiento</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="frame-block">
+      <div class="frame-title">
+        <h2>Detalle</h2>
+        <span class="xml-name">fragment_workout_detail.xml</span>
+      </div>
+      <div class="phone">
+        <div class="screen">
+          <div class="status"><span>10:45</span><span>LTE 100%</span></div>
+          <div class="toolbar">
+            <div class="icon-btn">‹</div>
+            <div class="toolbar-title">Detalle</div>
+            <div class="icon-btn">⋮</div>
+          </div>
+          <div class="content scroll">
+            <div class="detail-hero">
+              <p class="date">13/05/2026</p>
+              <h3>Pecho y triceps</h3>
+            </div>
+            <div class="info-grid">
+              <div class="info-row"><span>Peso corporal</span><strong>72.5 kg</strong></div>
+              <div class="info-row"><span>Molestia</span><strong>Si</strong></div>
+              <div class="info-row"><span>Zona</span><strong>Muneca derecha</strong></div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <h3>Descripcion</h3>
+                <span class="tag pain">Revisar</span>
+              </div>
+              <p class="helper">Molestia leve en muneca derecha al hacer press banca.</p>
+            </div>
+            <div class="card">
+              <h3>Notas</h3>
+              <p class="helper">Buen entrenamiento, pero bajar un poco el peso la proxima sesion.</p>
+            </div>
+            <div class="button-row">
+              <div class="button secondary">Editar</div>
+              <div class="button danger">Eliminar</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="frame-block">
+      <div class="frame-title">
+        <h2>Calendario</h2>
+        <span class="xml-name">fragment_calendar.xml</span>
+      </div>
+      <div class="phone">
+        <div class="screen">
+          <div class="status"><span>10:45</span><span>LTE 100%</span></div>
+          <div class="toolbar">
+            <div class="icon-btn">‹</div>
+            <div class="toolbar-title">Calendario</div>
+            <div class="icon-btn">⋮</div>
+          </div>
+          <div class="content scroll">
+            <div class="calendar-box">
+              <div class="calendar-head"><span>Mayo 2026</span><span>‹  ›</span></div>
+              <div class="week"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+              <div class="days">
+                <div class="day dim">27</div><div class="day dim">28</div><div class="day dim">29</div><div class="day dim">30</div><div class="day">1</div><div class="day">2</div><div class="day">3</div>
+                <div class="day">4</div><div class="day">5</div><div class="day">6</div><div class="day marked">7</div><div class="day">8</div><div class="day marked">9</div><div class="day">10</div>
+                <div class="day marked">11</div><div class="day">12</div><div class="day selected">13</div><div class="day">14</div><div class="day">15</div><div class="day">16</div><div class="day">17</div>
+                <div class="day">18</div><div class="day">19</div><div class="day">20</div><div class="day">21</div><div class="day">22</div><div class="day">23</div><div class="day">24</div>
+                <div class="day">25</div><div class="day">26</div><div class="day">27</div><div class="day">28</div><div class="day">29</div><div class="day">30</div><div class="day">31</div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <h3>13/05/2026</h3>
+                  <p class="meta">Entrenamientos registrados</p>
+                </div>
+                <span class="tag">2</span>
+              </div>
+            </div>
+            <div class="list">
+              <div class="list-item">
+                <div class="list-main"><strong>Pecho y triceps</strong><span>72.5 kg</span></div>
+                <span class="tag pain">Molestia</span>
+              </div>
+              <div class="list-item">
+                <div class="list-main"><strong>Cardio suave</strong><span>Sin peso</span></div>
+                <span class="tag">Sin molestias</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="frame-block">
+      <div class="frame-title">
+        <h2>About</h2>
+        <span class="xml-name">fragment_about.xml</span>
+      </div>
+      <div class="phone">
+        <div class="screen">
+          <div class="status"><span>10:45</span><span>LTE 100%</span></div>
+          <div class="toolbar">
+            <div class="icon-btn">‹</div>
+            <div class="toolbar-title">About</div>
+          </div>
+          <div class="content scroll">
+            <div class="about-logo">WL</div>
+            <div class="about-copy">
+              <h3>Workout Log</h3>
+              <p class="helper">Version 1.0</p>
+              <p class="helper">Diario personal para registrar entrenamientos, peso corporal, molestias y notas por fecha.</p>
+            </div>
+            <div class="card">
+              <h3>Objetivo</h3>
+              <p class="helper">Crear una app Android en Kotlin con Fragments, Navigation Graph, RecyclerView, Room, ViewModel y estilos reutilizables.</p>
+            </div>
+            <div class="card">
+              <h3>Autor</h3>
+              <p class="helper">Ivan</p>
+            </div>
+            <div class="button secondary">Volver</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="flow">
+    <h2>Mapa de navegacion propuesto</h2>
+    <div class="flow-grid">
+      <div class="flow-node"><strong>HomeFragment</strong><br>Accesos a añadir, historial y calendario.</div>
+      <div class="flow-node"><strong>WorkoutListFragment</strong><br>Lista RecyclerView. Click de item a detalle. FAB a formulario.</div>
+      <div class="flow-node"><strong>AddEditWorkoutFragment</strong><br>Sin ID crea. Con workoutId edita.</div>
+      <div class="flow-node"><strong>WorkoutDetailFragment</strong><br>Muestra datos completos. Editar o eliminar con confirmacion.</div>
+      <div class="flow-node"><strong>CalendarFragment</strong><br>CalendarView y resultados del dia seleccionado.</div>
+      <div class="flow-node"><strong>AboutFragment</strong><br>Entrada desde menu superior.</div>
+    </div>
+  </section>
+</body>
+</html>

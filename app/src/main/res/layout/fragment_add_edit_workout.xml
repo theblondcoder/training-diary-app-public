@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    tools:context=".ui.AddEditWorkoutFragment"
+    tools:theme="@style/Theme.Trainingdiaryapp">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        style="@style/Toolbar.Styles"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:menu="@menu/menu_add_edit"
+        app:title="@string/toolbarAddWorkout" />
+
+    <ScrollView
+        android:id="@+id/homeScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/topAppBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/formContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/large_margin">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardWorkoutForm"
+                style="@style/Card.Form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/form_card_padding">
+
+                    <TextView
+                        android:id="@+id/textDateLabel"
+                        style="@style/Text.FieldLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_date" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputLayoutDate"
+                        style="@style/Input.Outlined"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_margin"
+                        android:hint="dd/MM/yyyy">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="@dimen/input_min_height"
+                            tools:text="@string/sample_date_recent" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/textTrainingLabel"
+                        style="@style/Text.FieldLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/item_spacing"
+                        android:text="@string/label_training" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputLayoutTraining"
+                        style="@style/Input.Outlined"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_margin"
+                        android:hint="Example: Chest and triceps">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextTraining"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="top|start"
+                            android:minHeight="@dimen/textarea_min_height"
+                            android:minLines="3"
+                            tools:text="@string/sample_training_chest" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        style="@style/Text.Helper"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_margin"
+                        android:text="@string/helper_required" />
+
+                    <TextView
+                        android:id="@+id/textWeightLabel"
+                        style="@style/Text.FieldLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/item_spacing"
+                        android:text="@string/label_body_weight" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputLayoutBodyWeight"
+                        style="@style/Input.Outlined"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_margin"
+                        android:hint="Example: 72.5">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextBodyWeight"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal"
+                            android:minHeight="@dimen/input_min_height"
+                            tools:text="@string/sample_weight_plain" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardPainSwitch"
+                        style="@style/Card.ListItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/item_spacing">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="48dp"
+                            android:paddingStart="@dimen/list_card_padding"
+                            android:paddingEnd="@dimen/list_card_padding">
+
+                            <TextView
+                                android:id="@+id/textPainSwitchTitle"
+                                style="@style/Text.CardTitle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/label_has_pain"
+                                android:textSize="@dimen/text_body"
+                                app:layout_constraintBottom_toTopOf="@id/textPainSwitchHelper"
+                                app:layout_constraintEnd_toStartOf="@id/switchHasPain"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_chainStyle="packed" />
+
+                            <TextView
+                                android:id="@+id/textPainSwitchHelper"
+                                style="@style/Text.Helper"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="@string/helper_pain_switch"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/switchHasPain"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/textPainSwitchTitle" />
+
+                            <Switch
+                                android:id="@+id/switchHasPain"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="false"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/textPainDescriptionLabel"
+                        style="@style/Text.FieldLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/item_spacing"
+                        android:text="@string/label_pain_description" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputLayoutPainDescription"
+                        style="@style/Input.Outlined"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_margin"
+                        android:hint="Example: Mild pain in the right wrist">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextPainDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="top|start"
+                            android:minHeight="@dimen/textarea_min_height"
+                            android:minLines="3"
+                            tools:text="@string/sample_pain_description" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/textNotesLabel"
+                        style="@style/Text.FieldLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/item_spacing"
+                        android:text="@string/label_notes" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputLayoutNotes"
+                        style="@style/Input.Outlined"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_margin"
+                        android:hint="Example: Good workout. Lower the weight next session.">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextNotes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="top|start"
+                            android:minHeight="@dimen/textarea_min_height"
+                            android:minLines="3"
+                            tools:text="@string/sample_notes" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonSaveWorkout"
+                style="@style/Button.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_spacing"
+                android:text="@string/save_workout" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

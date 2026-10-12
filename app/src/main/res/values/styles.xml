@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- START Toolbar styles -->
+    <style name="Toolbar.Styles" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:background">@color/primary</item>
+        <item name="titleTextAppearance">@style/Text.ToolbarTitle</item>
+        <item name="titleTextColor">@color/text_white</item>
+        <item name="android:paddingTop">20dp</item>
+    </style>
+    <style name="Text.ToolbarTitle">
+        <item name="android:textColor">@color/text_white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <!-- END Toolbar styles -->
+
+    <!-- START Home Fragment -->
+
+    <style name="Text" />
+
+    <!-- Main screen title -->
+    <style name="Text.HomeTitle">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">@dimen/text_title</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Main subtitle under title -->
+    <style name="Text.HomeSubtitle">
+        <item name="android:textColor">@color/text_muted</item>
+        <item name="android:textSize">@dimen/text_subtitle</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+    </style>
+
+    <!-- Hero card title -->
+    <style name="Text.HeroTitle">
+        <item name="android:textColor">@color/text_white</item>
+        <item name="android:textSize">@dimen/text_hero_title</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Hero card subtitle -->
+    <style name="Text.HeroSubtitle">
+        <item name="android:textColor">@color/hero_subtitle</item>
+        <item name="android:textSize">@dimen/text_body</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+    </style>
+
+    <!-- Section titles: Summary, Quick Actions, etc. -->
+    <style name="Text.SectionTitle">
+        <item name="android:textColor">@color/text_muted</item>
+        <item name="android:textSize">@dimen/text_section</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.12</item>
+    </style>
+
+    <!-- Number inside stat cards -->
+    <style name="Text.StatNumber">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">@dimen/text_stat_number</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Label inside stat cards -->
+    <style name="Text.StatLabel">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:minLines">2</item>
+    </style>
+
+    <!-- Card title, for "last workout" -->
+    <style name="Text.CardTitle">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">@dimen/text_card_title</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Secondary text inside cards -->
+    <style name="Text.CardBody">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">@dimen/text_body</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+    </style>
+
+    <!-- Small metadata text, for dates -->
+    <style name="Text.Meta">
+        <item name="android:textColor">@color/text_muted</item>
+        <item name="android:textSize">@dimen/text_small</item>
+    </style>
+
+    <!-- Main filled button -->
+    <style name="Button.Primary" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/text_subtitle</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_white</item>
+        <item name="backgroundTint">@color/primary</item>
+        <item name="cornerRadius">@dimen/button_radius</item>
+        <item name="android:padding">14dp</item>
+    </style>
+
+    <!-- Secondary outlined button -->
+    <style name="Button.Secondary" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/text_subtitle</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/primary</item>
+        <item name="strokeColor">@color/border_light</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="cornerRadius">@dimen/button_radius</item>
+        <item name="backgroundTint">@color/card_background</item>
+        <item name="android:padding">14dp</item>
+    </style>
+
+    <!-- Generic white card -->
+    <style name="Card.Default" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/card_background</item>
+        <item name="cardCornerRadius">@dimen/card_radius</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
+        <item name="strokeColor">@color/border_light</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <!-- Blue hero card -->
+    <style name="Card.Hero" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/primary_variant</item>
+        <item name="cardCornerRadius">@dimen/card_radius</item>
+        <item name="cardElevation">@dimen/hero_card_elevation</item>
+    </style>
+
+    <!-- Pain tag text -->
+    <style name="Text.PainTag">
+        <item name="android:textColor">@color/pain_text</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/bg_pain_tag</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
+
+    <!-- END Home Fragment -->
+
+    <!-- Start Calendar Fragment-->
+
+    <!-- End Calendar Fragment-->
+
+    <!-- Shared layouts based on the wireframes -->
+
+    <style name="Card.Form" parent="Card.Default">
+        <item name="cardCornerRadius">@dimen/button_radius</item>
+    </style>
+
+    <style name="Card.ListItem" parent="Card.Default">
+        <item name="cardCornerRadius">@dimen/button_radius</item>
+    </style>
+
+    <style name="Text.FieldLabel">
+        <item name="android:textColor">@color/text_muted</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.Helper">
+        <item name="android:textColor">@color/text_muted</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+    </style>
+
+    <style name="Text.TagSuccess">
+        <item name="android:textColor">@color/accent_text</item>
+        <item name="android:textSize">@dimen/text_tag</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/bg_success_tag</item>
+        <item name="android:paddingStart">7dp</item>
+        <item name="android:paddingEnd">7dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
+
+    <style name="Text.EmptyState">
+        <item name="android:textColor">@color/text_muted</item>
+        <item name="android:textSize">@dimen/text_body</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/bg_empty_state</item>
+        <item name="android:paddingStart">18dp</item>
+        <item name="android:paddingEnd">18dp</item>
+        <item name="android:paddingTop">28dp</item>
+        <item name="android:paddingBottom">28dp</item>
+    </style>
+
+    <style name="Text.InfoLabel">
+        <item name="android:textColor">@color/text_muted</item>
+        <item name="android:textSize">@dimen/text_small</item>
+    </style>
+
+    <style name="Text.InfoValue">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">end</item>
+    </style>
+
+    <style name="Text.AboutLogo">
+        <item name="android:textColor">@color/text_white</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/bg_about_logo</item>
+    </style>
+
+    <style name="Chip.Filter" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="android:textColor">@color/text_muted</item>
+        <item name="android:textSize">@dimen/text_chip</item>
+        <item name="chipStrokeColor">@color/border_light</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="chipBackgroundColor">@color/card_background</item>
+        <item name="checkedIconVisible">false</item>
+    </style>
+
+    <style name="Chip.Filter.Active" parent="Chip.Filter">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="chipStrokeColor">@color/primary</item>
+        <item name="chipBackgroundColor">@color/chip_active_background</item>
+    </style>
+
+    <style name="Input.Outlined" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/border_light</item>
+        <item name="boxCornerRadiusTopStart">@dimen/button_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/button_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/button_radius</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/button_radius</item>
+        <item name="hintTextColor">@color/text_muted</item>
+    </style>
+
+    <style name="Button.Danger" parent="Button.Primary">
+        <item name="backgroundTint">@color/danger</item>
+    </style>
+
+</resources>

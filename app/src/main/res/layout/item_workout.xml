@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Card.ListItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/item_spacing">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="82dp"
+        android:padding="@dimen/list_card_padding">
+
+        <TextView
+            android:id="@+id/tvWorkoutTitle"
+            style="@style/Text.CardTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/sample_training_chest"
+            android:textSize="@dimen/text_subtitle"
+            app:layout_constraintEnd_toStartOf="@id/tvWorkoutDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvWorkoutDate"
+            style="@style/Text.Meta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/item_spacing"
+            android:text="@string/sample_date_recent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvWorkoutTitle" />
+
+        <TextView
+            android:id="@+id/tvWorkoutWeight"
+            style="@style/Text.Helper"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:text="@string/sample_weight"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvWorkoutTitle" />
+
+        <TextView
+            android:id="@+id/tvWorkoutPain"
+            style="@style/Text.PainTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:text="@string/sample_pain_wrist"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvWorkoutWeight" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

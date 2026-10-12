@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFrag">
+    <fragment
+        android:id="@+id/homeFrag"
+        android:name="com.example.training_diary_app.ui.HomeFragment"
+        android:label="Home">
+        <action
+            android:id="@+id/action_homeFragment_to_addEditWorkoutFragment"
+            app:destination="@id/addEditFrag"/>
+
+        <action
+            android:id="@+id/action_homeFragment_to_workoutListFragment"
+            app:destination="@id/workoutListFrag"/>
+
+        <action
+            android:id="@+id/action_homeFragment_to_aboutFragment"
+            app:destination="@id/aboutFrag"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/workoutListFrag"
+        android:name="com.example.training_diary_app.ui.WorkoutListFragment"
+        android:label="Training History">
+        <action
+            android:id="@+id/action_workoutListFragment_to_workoutDetailFragment"
+            app:destination="@id/workoutDetailFrag" />
+
+        <action
+            android:id="@+id/action_workoutListFragment_to_addEditWorkoutFragment"
+            app:destination="@id/addEditFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/workoutDetailFrag"
+        android:name="com.example.training_diary_app.ui.WorkoutDetailFragment"
+        android:label="Training Details">
+        <argument
+            android:name="workoutId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_workoutDetailFragment_to_addEditWorkoutFragment"
+            app:destination="@id/addEditFrag" />
+
+    </fragment>
+<!--    <fragment-->
+<!--        android:id="@+id/workoutCalendarFrag"-->
+<!--        android:name="com.example.training_diary_app.ui.CalendarFragment"-->
+<!--        android:label="Training Calendar"/>-->
+    <fragment
+        android:id="@+id/addEditFrag"
+        android:name="com.example.training_diary_app.ui.AddEditWorkoutFragment"
+        android:label="Add new workout">
+        <argument
+            android:name="workoutId"
+            app:argType="integer"
+            android:defaultValue="-1"/>
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFrag"
+        android:name="com.example.training_diary_app.ui.AboutFragment"
+        android:label="About the app">
+        <action
+            android:id="@+id/action_workoutAboutFragment_to_HomeFragment"
+            app:destination="@id/homeFrag" />
+    </fragment>
+
+</navigation>
