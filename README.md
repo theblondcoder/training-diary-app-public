@@ -10,6 +10,7 @@
   </p>
   <p>
     <a href="#features">Features</a> ·
+    <a href="#screenshots">Screenshots</a> ·
     <a href="#architecture">Architecture</a> ·
     <a href="#getting-started">Getting started</a> ·
     <a href="#development-roadmap">Development roadmap</a> ·
@@ -34,6 +35,27 @@ The current release is local-first: records are stored in an on-device Room data
 - Review totals, this month's sessions, the latest recorded body weight, and pain entries from the home screen.
 - Browse workout history with filters for all entries, entries with pain, or the five most recent entries.
 - Persist data locally with Room and observe changes through Android Architecture Components.
+
+## Screenshots
+
+<table>
+  <tr>
+    <th align="center">Home Dashboard</th>
+    <th align="center">Workout History</th>
+  </tr>
+  <tr>
+    <td align="center"><a href="docs/screenshots/home.png"><img src="docs/screenshots/home.png" alt="Training Diary home dashboard with workout summaries and quick actions" width="240" /></a></td>
+    <td align="center"><a href="docs/screenshots/history.png"><img src="docs/screenshots/history.png" alt="Workout history with filters and recorded training sessions" width="240" /></a></td>
+  </tr>
+  <tr>
+    <th align="center">Add Workout</th>
+    <th align="center">About The App</th>
+  </tr>
+  <tr>
+    <td align="center"><a href="docs/screenshots/add-workout.png"><img src="docs/screenshots/add-workout.png" alt="Workout entry form with date, training details, body weight, pain and notes" width="240" /></a></td>
+    <td align="center"><a href="docs/screenshots/about.png"><img src="docs/screenshots/about.png" alt="Training Diary About screen with the app goal, version and author" width="240" /></a></td>
+  </tr>
+</table>
 
 ## Architecture
 
@@ -118,6 +140,7 @@ training-diary-app/
 |   |-- src/main/java/.../viewmodel/     # UI state and data access
 |   `-- src/main/res/                    # Layouts, navigation, themes, assets
 |-- docs/wireframes/                     # Interface planning references
+|-- docs/screenshots/                    # App screenshots
 |-- gradle/                              # Wrapper and dependency catalog
 `-- README.md
 ```
